@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'crispy_forms',
-    'kwetter',
     'django_filters',
     'corsheaders',
-    'debug_toolbar'
+    'debug_toolbar',
+    'account',
+    'kweet'
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'kweet': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'kweet_db.sqlite3'),
+    },
+    'account': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'account_db.sqlite3'),
     }
 }
 # Password validation
@@ -134,3 +143,6 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_ALLOW_ALL = True
 
 INTERNAL_IPS = ('localhost', '127.0.0.1')
+
+DATABASE_ROUTERS = ['kweet.routers.KweetRouter', 'account.routers.AccountRouter']
+

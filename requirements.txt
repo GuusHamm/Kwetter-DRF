@@ -6,4 +6,3 @@ django-crispy-forms
 coreapi
 django-cors-headers
 django-debug-toolbar
-psycopg2

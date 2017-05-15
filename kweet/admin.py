@@ -1,12 +1,8 @@
 from django.contrib import admin
 
+
 # Register your models here.
-from kwetter.models import Account, Kweet
-
-
-class AccountAdmin(admin.ModelAdmin):
-    list_display = ('username', 'password', 'firstname', 'lastname')
-    list_filter = ('username',)
+from kweet.models import Kweet
 
 
 class KweetAdmin(admin.ModelAdmin):
@@ -15,5 +11,4 @@ class KweetAdmin(admin.ModelAdmin):
     search_fields = ('account__username', 'message')
 
 
-admin.site.register(Account, AccountAdmin)
 admin.site.register(Kweet, KweetAdmin)

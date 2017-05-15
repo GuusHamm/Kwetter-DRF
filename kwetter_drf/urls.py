@@ -18,7 +18,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
 
-from kwetter.views import AccountViewSet, KweetViewSet
+from account.views import AccountViewSet
+from kweet.views import KweetViewSet
 
 router = routers.DefaultRouter()
 router.register(r'account', AccountViewSet)

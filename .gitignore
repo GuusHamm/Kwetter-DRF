@@ -110,3 +110,5 @@ ENV/
 .ropeproject
 /.idea/
 /db.sqlite3
+/account_db.sqlite3
+/kweet_db.sqlite3
